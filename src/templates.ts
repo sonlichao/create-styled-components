@@ -35,7 +35,7 @@ export default {
     import React from "react";
     
     interface Props {
-      children: React.ReactNode;
+      children?: React.ReactNode;
     }
     interface DOMProps extends Props {
       style: ChakraProps;
@@ -47,16 +47,9 @@ export default {
       </chakra.div>
     );
     
-    const StyledListBar: React.VFC<Props> = props => (
+    const Styled{{componentName}}: React.VFC<Props> = props => (
       <DOM{{componentName}}
-        style={{
-          d: "flex",
-          __css: {
-            "&>*": {
-              mx: 4,
-            },
-          },
-        }}
+        style={}
         {...props}
       />
     );
@@ -69,7 +62,7 @@ export default {
     
     import { {{componentName}} } from "./{{componentName}}";
     
-    const onSave = jest.fn<void, [AdAuth]>(s => s);
+    const onSave = jest.fn<void, [{arg}]>(s => s);
 
     test("{{componentName}}", () => {
         const input = render(<{{componentName}} />);
