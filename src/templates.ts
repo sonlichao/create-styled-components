@@ -1,60 +1,56 @@
 export default {
-    jsTemplate: `import { chakra, ChakraProps } from "@chakra-ui/system";
+    jsTemplate: `
+`,
+    tsTemplate: `import type { ChakraProps } from "@chakra-ui/react";
+    import { chakra } from "@chakra-ui/system";
     import React from "react";
     
+    import { localize } from "~/utils/react";
+    
     interface Props {
-      children: React.ReactNode;
-    }
-    interface DOMProps extends Props {
-      style: ChakraProps;
+      children?: React.ReactNode;
     }
     
-    const DOM{{componentName}}: React.VFC<DOMProps> = ({ style, children }) => (
-      <chakra.div role="" aria-label="" {...style}>
-        {children}
-      </chakra.div>
+    interface StyledProps extends Props {
+      onClick?: () => void;
+    }
+    interface DOMProps extends StyledProps {
+      styles: ChakraProps;
+    }
+    
+    const DOM{{componentName}}: React.VFC<DOMProps> = localize(
+      ({ styles, children }, t) => (
+        <chakra.div role="" aria-label="" {...styles}>
+          {children}
+        </chakra.div>
+      ),
     );
     
-    const StyledListBar: React.VFC<Props> = props => (
+    export const Styled{{componentName}}: React.VFC<StyledProps> = props => (
       <DOM{{componentName}}
-        style={{
+        styles={
+          {
           d: "flex",
           __css: {
             "&>*": {
               mx: 4,
             },
           },
-        }}
+        }
+      }
         {...props}
       />
     );
+
+    // export const {{componentName}} = Styled{{componentName}};
+    export const {{componentName}}: React.VFC<Props> = props => {
+      return (
+        <Styled{{componentName}}
+          {...props}
+        />
+      );
+    };
     
-    export const {{componentName}} = Styled{{componentName}};
-`,
-    tsTemplate: `import { chakra, ChakraProps } from "@chakra-ui/system";
-    import React from "react";
-    
-    interface Props {
-      children?: React.ReactNode;
-    }
-    interface DOMProps extends Props {
-      style: ChakraProps;
-    }
-    
-    const DOM{{componentName}}: React.VFC<DOMProps> = ({ style, children }) => (
-      <chakra.div role="" aria-label="" {...style}>
-        {children}
-      </chakra.div>
-    );
-    
-    const Styled{{componentName}}: React.VFC<Props> = props => (
-      <DOM{{componentName}}
-        style={}
-        {...props}
-      />
-    );
-    
-    export const {{componentName}} = Styled{{componentName}};
 `,
     spec: `import { fireEvent, render, screen, waitFor } from "@testing-library/react";
     import jest from "jest-mock";
@@ -62,8 +58,6 @@ export default {
     
     import { {{componentName}} } from "./{{componentName}}";
     
-    const onSave = jest.fn<void, [{arg}]>(s => s);
-
     test("{{componentName}}", () => {
         const input = render(<{{componentName}} />);
         fireEvent.click(input.getByRole(""));
@@ -84,36 +78,18 @@ export default {
         fireEvent.submit(screen.getByTestId("submit-button"));
         await waitFor(() => expect(onSave).toBeCalled());
       });
-    
-      test.each(["displayName", "hostname", "adminId", "port"])(
-        "should display required error when displayname/hostname/adminId/port is invalid",
-        async (filedName: string) => {
-          const searchName = new RegExp(\`\${key}.\${filedName}\`, "i");
-          const roleType = filedName === "port" ? "spinbutton" : "textbox";
-          fireEvent.input(screen.getByRole(roleType, { name: searchName }), {
-            target: {
-              value: "",
-            },
-          });
-          fireEvent.submit(screen.getByTestId("submit-button"));
-          await waitFor(() => expect(onSave).not.toBeCalled());
-          await expect(
-            screen.findAllByText("Your input is required"),
-          ).resolves.toHaveLength(1);
-        },
-      );
     });   
 `,
 storybook: `import React from "react";
 
-import { {{componentName}} } from "./{{componentName}}";
+import { Styled{{componentName}} } from "./{{componentName}}";
 
 export default {
   title: "{path}/{{componentName}}",
-  component: {{componentName}},
+  component: Styled{{componentName}},
 };
 
-export const Main = () => <{{componentName}} />;
+export const Main = () => <Styled{{componentName}} />;
 
 `,
 
