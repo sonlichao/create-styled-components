@@ -57,7 +57,10 @@ export default {
     import * as React from "react";
     
     import { {{componentName}} } from "./{{componentName}}";
-    
+
+    // you can change "string" to  function arguments
+    const onSave = jest.fn<void, [string]>(s => s);
+
     test("{{componentName}}", () => {
         const input = render(<{{componentName}} />);
         fireEvent.click(input.getByRole(""));
