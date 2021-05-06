@@ -1,10 +1,10 @@
 # create-styled-components README
 
 ## Features
-This extension is copied from below github project and change templates for our project.
+This extension is partial copied from below github project and change templates for our project.
 brendon1555/vscode-react-component-generator 
 
-It can create a template components with typescript, jest test and storybook
+It can create template components with typescript, jest test and storybook
 ### About Template.
 Our template use below libirays.  
 @testing-library/react  
@@ -12,6 +12,20 @@ jest
 typescript  
 @chakra-ui  
 react-i18next(for localize)  
+
+## Japanese document
+<a href="document/Create Styled Components for Vscode.pptx" download>Click to Download</a>
+
+## Install
+
+### From vsix file
+1. Download vsix file from dist fold like blow.
+   create-styled-components-0.0.1.vsix.
+
+2. Click the extension icon in VSCode.
+3. Click the [...] in top-right of extension window.
+4. Click the  [Install from VSIX] in submenu.
+5. Select you downloaded vsix file and install it.
 
 ## Usage
 
@@ -51,5 +65,11 @@ Path relative to the workspace root to place components when not using the Explo
 
 -----------------------------------------------------------------------------------------------------------
 ## Following extension guidelines
-https://code.visualstudio.com/api/get-started/your-first-extension
-https://code.visualstudio.com/api/working-with-extensions/publishing-extension
+[see here](url:https://code.visualstudio.com/api/get-started/your-first-extension)
+
+## generate installer file command
+`npm install -g vsce`
+
+`vsce package`  
+
+[more](url:https://code.visualstudio.com/api/working-with-extensions/publishing-extension)

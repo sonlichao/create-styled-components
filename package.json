@@ -1,6 +1,7 @@
 {
   "name": "create-styled-components",
   "displayName": "create styled components",
+  "license": "MIT",                   
   "description": "Create a react components with test and storybook for VS Code ",
   "version": "0.0.1",
   "engines": {
@@ -10,6 +11,10 @@
     "Other"
   ],
   "publisher": "sonlichao",
+  "author": {
+		"name": "Lichao Sun",
+		"url": "https://github.com/sonlichao"
+	},
   "activationEvents": [
     "onCommand:extension.createStyledComponent"
   ],
