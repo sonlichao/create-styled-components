@@ -9,7 +9,7 @@ see document/Create Styled Components for Vscode.pptx
 This extension is partial copied from below github project and change templates for our project.  
 [brendon1555/vscode-react-component-generator](https://github.com/brendon1555/vscode-react-component-generator)
 
-It can create template components with typescript, jest test and storybook
+It can create template components with typescript, jest test and storybook.
 ### About Template.
 Our template use below libraries.  
 @testing-library/react  
