@@ -11,7 +11,7 @@ This extension is partial copied from below github project and change templates 
 
 It can create template components with typescript, jest test and storybook
 ### About Template.
-Our template use below librays.  
+Our template use below libraries.  
 @testing-library/react  
 jest  
 typescript  
