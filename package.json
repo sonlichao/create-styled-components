@@ -1,68 +1,68 @@
 {
   "name": "create-styled-components",
-	"displayName": "create styled components",
-	"description": "",
-	"version": "0.0.1",
-	"engines": {
-		"vscode": "^1.55.0"
-	},
-	"categories": [
-		"Other"
-	],
-	"publisher": "sonlichao",
-	"activationEvents": [
-        "onCommand:extension.createStyledComponent"
-	],
-	"main": "./out/extension.js",
-	"contributes": {
-		"commands": [
-			{
-				"command": "extension.createStyledComponent",
-				"title": "Create Styled Components"
-			}
-		],
-		"menus": {
-			"explorer/context": [
-				{
-					"when": "explorerResourceIsFolder",
-					"command": "extension.createStyledComponent"
-				}
-			]
-		},
-		"configuration": {
-			"type": "object",
-			"title": "React Component Generator",
-			"properties": {
-				"reactComponentGenerator.componentsPath": {
-					"type": "string",
-					"description": "Default path for components when not using context menu"
-				}
-			}
-		}
-	},
-	"scripts": {
-		"vscode:prepublish": "yarn run compile",
-		"compile": "tsc -p ./",
-		"watch": "tsc -watch -p ./",
-		"pretest": "yarn run compile && yarn run lint",
-		"lint": "eslint src --ext ts",
-		"test": "node ./out/test/runTest.js"
-	},
-	"devDependencies": {
-		"@types/vscode": "^1.55.0",
-		"@types/glob": "^7.1.3",
-		"@types/mocha": "^8.0.4",
-		"@types/node": "^12.11.7",
-		"@types/mustache": "^4.1.1",
-		"eslint": "^7.19.0",
-		"@typescript-eslint/eslint-plugin": "^4.14.1",
-		"@typescript-eslint/parser": "^4.14.1",
-		"glob": "^7.1.6",
-		"mocha": "^8.2.1",
-		"typescript": "^4.1.3",
-		"vscode-test": "^1.5.0"
-	},
-	"dependencies": {
-		"mustache": "^4.2.0"
-	}
+  "displayName": "create styled components",
+  "description": "Create a react components with test and storybook for VS Code ",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.55.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "publisher": "sonlichao",
+  "activationEvents": [
+    "onCommand:extension.createStyledComponent"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.createStyledComponent",
+        "title": "Create Styled Components"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "when": "explorerResourceIsFolder",
+          "command": "extension.createStyledComponent"
+        }
+      ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "React Component Generator",
+      "properties": {
+        "reactComponentGenerator.componentsPath": {
+          "type": "string",
+          "description": "Default path for components when not using context menu"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.55.0",
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.0.4",
+    "@types/node": "^12.11.7",
+    "@types/mustache": "^4.1.1",
+    "eslint": "^7.19.0",
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
+    "glob": "^7.1.6",
+    "mocha": "^8.2.1",
+    "typescript": "^4.1.3",
+    "vscode-test": "^1.5.0"
+  },
+  "dependencies": {
+    "mustache": "^4.2.0"
+  }
 }
