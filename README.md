@@ -19,12 +19,11 @@ see document/Create Styled Components for Vscode.pptx
 ## Install
 
 ### From vsix file
-1. Download vsix file from dist fold like blow.
+1. Download vsix file from `dist` fold.  
    create-styled-components-0.0.1.vsix.
-
-2. Click the extension icon in VSCode.
-3. Click the [...] in top-right of extension window.
-4. Click the  [Install from VSIX] in submenu.
+2. Click `extension icon` in VSCode.
+3. Click the `...` in top-right of extension window.
+4. Click the  `Install from VSIX` in submenu.
 5. Select you downloaded vsix file and install it.
 
 ## Usage
@@ -33,14 +32,14 @@ see document/Create Styled Components for Vscode.pptx
 
 - Right click the folder in the sidebar where you want to create a component.
 - Select `Create Styled Component`.
-- Select whether to use Typescript(only), and include Storybook or Tests.
+- Select Typescript(it is only select) and whether to include Storybook or Tests.
 - Enter a name for the Component.
 - A Component will be created in a directory named after your input.
 
 ### From Command Palette
 
 - Open the command palette and type `Create Styled Component`, press `Enter`.
-- Select whether to use Typescript(only), and include Storybook or Tests.
+- Select Typescript(it is only select) and whether to include Storybook or Tests.
 - Enter a name for the Component.
 - A Component will be created in a directory named after your input.
 
@@ -55,21 +54,19 @@ Path relative to the workspace root to place components when not using the Explo
 
 
 ## Known Issues
-
+Only use Typescript.
 
 ## Release Notes
-
-
 ### 0.0.1
-
+It is for our project.
 
 -----------------------------------------------------------------------------------------------------------
 ## Following extension guidelines
-[see here](url:https://code.visualstudio.com/api/get-started/your-first-extension)
+[see here](https://code.visualstudio.com/api/get-started/your-first-extension)
 
 ## generate installer file command
 `npm install -g vsce`
 
 `vsce package`  
 
-[more](url:https://code.visualstudio.com/api/working-with-extensions/publishing-extension)
+[more](https://code.visualstudio.com/api/working-with-extensions/publishing-extension)
