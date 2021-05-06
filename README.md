@@ -1,12 +1,12 @@
 # create-styled-components README
 
 ## Features
-This extension is partial copied from below github project and change templates for our project.
-brendon1555/vscode-react-component-generator 
+This extension is partial copied from below github project and change templates for our project.  
+[brendon1555/vscode-react-component-generator](https://github.com/brendon1555/vscode-react-component-generator)
 
 It can create template components with typescript, jest test and storybook
 ### About Template.
-Our template use below libirays.  
+Our template use below librays.  
 @testing-library/react  
 jest  
 typescript  
