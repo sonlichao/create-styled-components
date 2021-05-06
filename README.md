@@ -14,7 +14,7 @@ typescript
 react-i18next(for localize)  
 
 ## Japanese document
-<a href="document/Create Styled Components for Vscode.pptx" download>Click to Download</a>
+see document/Create Styled Components for Vscode.pptx
 
 ## Install
 
