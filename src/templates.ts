@@ -95,7 +95,6 @@ export const Main = () => <Styled{{componentName}} />;
 
 `,
 
-index: `
-export { {{componentName}} } from "./{{componentName}}";
+index: `export { {{componentName}} } from "./{{componentName}}";
 `
 };
