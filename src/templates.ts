@@ -12,10 +12,9 @@ export default {
     }
     
     interface StyledProps extends Props {
-      onClick?: () => void;
     }
     interface DOMProps extends StyledProps {
-      styles: ChakraProps;
+      styles: Record<string, ChakraProps>;
     }
     
     const DOM{{componentName}}: React.VFC<DOMProps> = localize(
